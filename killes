@@ -22,7 +22,7 @@ function menu_api(){
 		exit("Apikey: ".m."Apikey bakiyesi tükendi!".n);
 	}
 	sv("Apikey",$data);
-	$x = base64_encode($apikey."|".$data["url"]."|".Api_Bal());
+	
 
 }
 
