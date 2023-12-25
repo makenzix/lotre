@@ -13,13 +13,13 @@ function menu_api(){
 	Title("Regist: ".$data["ref"]);
 	$apikey = readline(Select("Apikey_Multibot"));
 	if(!$apikey){
-		exit(Error("isi apikey!!"));
+		exit(Error("apikey'i doldurun!!"));
 	}
 	$data["apikey"] = $apikey;
 	
 	$cek = json_decode(file_get_contents($data["url"]."res.php?action=userinfo&key=".$data["apikey"]),1);
 	if(!$cek["balance"]){
-		exit("Apikey: ".m."Saldo Apikey habis!".n);
+		exit("Apikey: ".m."Apikey bakiyesi tükendi!".n);
 	}
 	sv("Apikey",$data);
 	$x = base64_encode($apikey."|".$data["url"]."|".Api_Bal());
@@ -152,7 +152,7 @@ function HcType1($url,$apikey, $sitekey, $pageurl){
 function BalType1($url, $apikey, $cc){
 	$x = json_decode(file_get_contents($url."res.php?action=userinfo&key=".$apikey),1);
 	if(!$x["balance"]){
-		exit("Apikey: ".m."Saldo Apikey habis!".n);
+		exit("Apikey: ".m."Apikey bakiyesi tükendi!".n);
 	}
 	return $x["balance"]." $cc";
 }
