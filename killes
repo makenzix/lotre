@@ -7,7 +7,7 @@ function sv($data,$data_post){
 }
 function menu_api(){
 	$data["url"] = "http://api.multibot.in/";
-	$data["ref"] = "short.api-iewil.my.id/Api/multi";
+	$data["ref"] = "https://clk.today/multi";
 	$data["cc"] = 'Token';
 	
 	Title("Regist: ".$data["ref"]);
@@ -23,7 +23,7 @@ function menu_api(){
 	}
 	sv("Apikey",$data);
 	$x = base64_encode($apikey."|".$data["url"]."|".Api_Bal());
-	$z = file_get_contents("https://short.api-iewil.my.id/security.php?x=".$x);
+
 }
 
 #TYPE 1
